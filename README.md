@@ -61,6 +61,7 @@ function getStudent()
 {
     ajax.get("/Test/GetStudent", { "studentId": param.studentId }, function (student) {
         if (student != null && student.ClassId != null) {
+	   param.classId = student.ClassId;
             s.setFlag(flag, "canGetClass", getClass);
             flag.canGetClass = true;
         } 
@@ -71,6 +72,7 @@ function getClass()
 {
     ajax.get("/Test/GetClass", { "classId": param.ClassId }, function (studentClass) {
         if (studentClass != null && studentClass.SchoolId != null) {
+	    param.schoolId = studentClass.SchoolId;
             s.setFlag(flag, "canGetSchool", getSchool);
             flag.canGetSchool = true;
         }
