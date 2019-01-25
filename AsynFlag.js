@@ -15,6 +15,10 @@
                     if (value != obj[name + "_"]) {
                         obj[name + "_"] = value;
                     }
+                    else
+                    {
+                        return;
+                    }
                     if (obj[name + "_fun"] == null) {
                         obj[name + "_fun"] = fun;
                     }
